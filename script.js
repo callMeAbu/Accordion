@@ -1,5 +1,16 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".item");
+
+    // Ensure all items start as closed
+    items.forEach(item => {
+        const content = item.querySelector(".content");
+        const icon = item.querySelector(".title span");
+
+        item.classList.remove("active");
+        content.style.display = "none";
+        icon.textContent = "+";
+    });
 
     items.forEach(item => {
         const title = item.querySelector(".title");
